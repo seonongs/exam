@@ -1,7 +1,6 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'First App',
+      title: 'Nurschedule',
       theme: ThemeData(primarySwatch: Colors.yellow),
       home: MyHomePage(),
     );
@@ -18,16 +17,34 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.yellow,
       appBar: AppBar(
-        title: Text('First App'),
-        centerTitle: true,
+        title: Row(
+          children: const [
+            Text('Nurschedule', style: TextStyle(
+                color: Color.fromRGBO(0, 0, 0, 100)
+            ),),
+          ],
+        ),
         backgroundColor: Colors.yellowAccent,
         elevation: 0.0,
+        actions: [
+          IconButton(
+              icon: Icon(Icons.settings, color: Color.fromRGBO(0, 0, 0, 10),),
+              onPressed: () {
+                print('setting');
+              }
+          ),
+          IconButton(
+            icon: Icon(Icons.logout, color: Color.fromRGBO(0, 0, 0, 10),),
+            onPressed: () {
+              print('logout');
+            },
+          ),
+        ],
       ),
       body: Center(
         child: Column(
