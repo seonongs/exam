@@ -39,7 +39,7 @@ class MyHomePage extends StatelessWidget {
               }
           ),
           IconButton(
-            icon: Icon(Icons.logout, color: Color.fromRGBO(0, 0, 0, 10),),
+            icon: Icon(Icons.logout, color: Color.fromRGBO(0, 0, 0, 11),),
             onPressed: () {
               print('logout');
             },
